@@ -21,6 +21,7 @@ function MovieHeader() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
+                    <Nav.Link as={NavLink} to="/search">Search</Nav.Link>
                     <Nav.Link as={NavLink} to="/movielist" disabled={!loggedIn}> 
                         Movie List
                     </Nav.Link>
@@ -34,8 +35,10 @@ function MovieHeader() {
                         </span>
                         ): (
                         'Login'
-                        )}
+                        )}      
                     </Nav.Link>
+                    
+
                 </Nav>
                 </Navbar.Collapse>
             </Navbar>
