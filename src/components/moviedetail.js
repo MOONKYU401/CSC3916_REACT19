@@ -52,13 +52,26 @@ const MovieDetail = () => {
           </ListGroupItem>
         </ListGroup>
         <Card.Body>
-          {selectedMovie.reviews.map((review, i) => (
-            <p key={i}>
-              <b>{review.username}</b>&nbsp; {review.review} &nbsp; <BsStarFill />{' '}
-              {review.rating}
-            </p>
-          ))}
-        </Card.Body>
+  <h5>User Reviews</h5>
+  {selectedMovie.movieReviews?.length > 0 ? (
+    <div className="review-grid">
+      <Row className="fw-bold mb-2">
+        <Col xs={4}>Username</Col>
+        <Col xs={2}>Rating</Col>
+        <Col xs={6}>Review</Col>
+      </Row>
+      {selectedMovie.movieReviews.map((review, i) => (
+        <Row key={i} className="mb-2">
+          <Col xs={4}>{review.username}</Col>
+          <Col xs={2}><BsStarFill /> {review.rating}</Col>
+          <Col xs={6}>{review.review}</Col>
+        </Row>
+      ))}
+    </div>
+  ) : (
+    <p>No reviews yet.</p>
+  )}
+</Card.Body>
       </Card>
     );
   };
