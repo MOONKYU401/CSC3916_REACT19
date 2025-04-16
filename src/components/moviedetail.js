@@ -38,7 +38,6 @@ const MovieDetail = () => {
       });
   
       alert("Review submitted!");
-      window.location.reload(); // or re-fetch movie data
     } catch (err) {
       console.error(err);
       alert("Error submitting review");
